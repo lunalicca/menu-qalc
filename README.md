@@ -1,15 +1,20 @@
 # menu-qalc
-A calculator for Rofi/dmenu(2)
+A calculator for Wofi/dmenu(2).
+Adapted for Wayland and Wofi.
 
 [Screencast](https://gfycat.com/SociableDopeyHerald)
 
 ## Installation
-Arch Linux AUR: [menu-qalc](https://aur.archlinux.org/packages/menu-qalc/)
+
+    git clone [repository]
+    cd ./menu-qalc
+    chmod +x menu-qalc
+    mv menu-qalc ~/.local/bin/
 
 ## Dependencies
 - [libqalculate](https://archlinux.org/packages/extra/x86_64/libqalculate/)
-- [xclip](https://www.archlinux.org/packages/extra/x86_64/xclip/)
-- [Rofi](https://aur.archlinux.org/packages/rofi-git/) or
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard/)
+- [Wofi](https://hg.sr.ht/~scoopta/wofi/) or
   dmenu[(2)](https://aur.archlinux.org/packages/dmenu2/)
 
 ## Usage
@@ -24,23 +29,22 @@ Arch Linux AUR: [menu-qalc](https://aur.archlinux.org/packages/menu-qalc/)
     = '1000 EUR to USD'
 
 The answer can be copied to the clipboard and used for further calculations
-inside (or outside) Rofi/dmenu.
+inside (or outside) Wofi/dmenu.
 
-If launched outside of Rofi/dmenu the expression may need quotation marks.
+If launched outside of Wofi/dmenu the expression may need quotation marks.
 
 ## Custom Usage
 To launch directly into the calculator, use the following command (useful if
-bound to "super + equal" in [sxhkd](https://github.com/baskerville/sxhkd),
-[i3](https://i3wm.org/) or the like):
+bound to "super + equal" in [sway](https://swaywm.org/) or the like):
 
-    = -- [rofi/dmenu parameters]
+    = -- [wofi/dmenu parameters]
 
 For example:
 
-    = -- -location 2 -width 100
+    = -- --location 2 --width 100
 
 ### Force usage of `dmenu`
-By default, if `rofi` is installed, it will be used. You can force `menu-qalc`
+By default, if `wofi` is installed, it will be used. You can force `menu-qalc`
 to use `dmenu` or any other `dmenu`-like application:
 
     = --dmenu=dmenu
